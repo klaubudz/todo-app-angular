@@ -1,2 +1,16 @@
-<!-- <input type="checkbox"> -->
-<input type="text" class="form-control" placeholder="Co chcesz zrobić?" [formControl]="todoControl" (focusout)="saveTodo($event)">
+<form [formGroup]="todoForm">
+    <div class="row">
+        <div class="col-md-2">
+            <input type="checkbox" class="form-control" formControlName="isDone" (change)="saveTodo($event)">
+        </div>
+        <div class="col-md-8">
+            <input type="text" class="form-control" placeholder="Co chcesz zrobić?" formControlName="text" (focusout)="saveTodo($event)">
+        </div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-primary" (click)="deleteTodo($event)">
+                <i class="bi bi-trash"></i>
+            </button>        
+        </div>
+    </div>
+</form>
+

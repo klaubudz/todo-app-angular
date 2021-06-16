@@ -19,4 +19,12 @@ export class TodoService {
   public sendTodo(todo: Todo): Observable<Todo> {
     return this.http.post<Todo>(data.todosUrl, todo);
   }
+
+  public editTodo(todo: Todo): Observable<Todo> {
+    return this.http.put<Todo>(data.todosUrl, todo);
+  }
+
+  public deleteTodo(todoId: number): Observable<Object> {
+    return this.http.delete(data.todosUrl+'?todoId='+todoId);
+  }
 }

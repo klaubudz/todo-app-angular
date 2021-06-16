@@ -1,5 +1,6 @@
-<div>
-    <ul>
-      <li *ngFor="let todo of todos">{{todo.text}}</li>  
-    </ul>
+<div class="container">
+  <!-- List of todos -->
+  <app-todo-input *ngFor="let todo of todos" [todoInput]="todo" (onDelete)="removeTodo($event)"></app-todo-input>
+  <!-- Last one, always empty and waiting -->
+  <app-todo-input (onSave)="addTodo($event)"></app-todo-input>
 </div>

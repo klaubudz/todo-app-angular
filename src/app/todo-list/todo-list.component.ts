@@ -20,4 +20,15 @@ export class TodoListComponent implements OnInit {
     this.todoService.getList().subscribe(data => this.todos = data);
   }
 
+  addTodo(todo: Todo): void {
+    this.todos.push(todo);
+  }
+
+  removeTodo(todo: Todo): void {
+    const index = this.todos.findIndex(e => e.id === todo.id);
+    if(index > -1){
+      this.todos.splice(index,1);
+    }
+  }
+
 }
