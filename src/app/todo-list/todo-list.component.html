@@ -1,6 +1,11 @@
-<div class="container">
+<div class="container list-wrapper">
+  <!-- First one, always empty and waiting -->
+  <div class="default-todo-input-wrapper">
+    <hr class="separate-default-input">
+    <app-todo-input [isDefault]="true" (onSave)="addTodo($event)"></app-todo-input>
+    <hr class="separate-default-input">
+  </div>
+  
   <!-- List of todos -->
   <app-todo-input *ngFor="let todo of todos" [todoInput]="todo" (onDelete)="removeTodo($event)"></app-todo-input>
-  <!-- Last one, always empty and waiting -->
-  <app-todo-input (onSave)="addTodo($event)"></app-todo-input>
 </div>

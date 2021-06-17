@@ -1,0 +1,16 @@
+.list-wrapper {
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.default-todo-input-wrapper {
+    position: sticky;
+    background-color: white;
+    z-index: 100;
+    top: 0;
+}
+
+.separate-default-input {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}

@@ -11,6 +11,7 @@ import { TodoService } from '../services/todo.service';
 export class TodoInputComponent implements OnInit {
 
   @Input() todoInput: Todo;
+  @Input() isDefault: Boolean;
   @Output() onSave = new EventEmitter<Todo>();
   @Output() onDelete = new EventEmitter<Todo>();
   todoForm = new FormGroup({

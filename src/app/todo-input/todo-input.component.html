@@ -1,10 +1,10 @@
-<form [formGroup]="todoForm">
+<form [formGroup]="todoForm" class="todo-form">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-1 offset-md-1">
             <input type="checkbox" class="form-control" formControlName="isDone" (change)="saveTodo($event)">
         </div>
         <div class="col-md-8">
-            <input type="text" class="form-control" placeholder="Co chcesz zrobić?" formControlName="text" (focusout)="saveTodo($event)">
+            <input type="text" class="form-control" placeholder="What do you want to do?" formControlName="text" (focusout)="saveTodo($event)" [ngStyle]="{'background-color': isDefault ? '#f2f2f2' : '#ffffff'}">
         </div>
         <div class="col-md-2">
             <button type="button" class="btn btn-primary" (click)="deleteTodo($event)">
